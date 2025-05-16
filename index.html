@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="google" content="notranslate"><link rel="shortcut icon" id="_favicon" href="favicon.ico" type="image/vnd.microsoft.icon">
-	<title>PRYTHMAQUARIUM</title>
+	<title>PRYTHM水族館</title>
 	<link rel="stylesheet" href="https://use.typekit.net/jsd1nvl.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 	<link rel="stylesheet" href="https://use.typekit.net/dnf0qsh.css">	
@@ -55,7 +55,7 @@
 						</li>
 						<li>
 							<div>
-								<span>ABOUT US</span>
+								<span>私たちについて</span>
 							</div>
 						</li>
 						<li>
@@ -91,7 +91,7 @@
 						<li>
 							<div class="side_col">
 								<div>
-									<img src="./img/ft_twitter.png" alt="">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" version="1.1" id="IconChangeColor" height="24" width="24"> <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" id="mainIconPathAttribute" fill="#ffffff"></path> </svg>
 								</div>
 								<div>
 									<img src="./img/ft_instagram.png" alt="">
@@ -164,10 +164,10 @@
 							<div class="about_img02">
 								<img src="./img/about_img02.png" alt="">
 							</div>
-						</div>						
+						</div>
 						<div class="about_txt">
-							<h3>下町に潜む沈黙の水族館</h3>
-							<p>「PRYTHMAQUARIUM」が手掛ける疑似生命。<br>
+							<h3 class="fade-in">下町に潜む沈黙の水族館</h3>
+							<p class="fade-in">「PRYTHM水族館」が手掛ける疑似生命。<br>
 							叡智を集め、最上の素材と匠の業によって形作られる
 							至極のバイオAIを開発しています。</p>
 							<div class="view_more_btn">VIEW MORE ></div>				
@@ -232,18 +232,19 @@
 								<img src="./img/shop_image.jpg" alt="">
 							</div>
 							<div class="shop_txt">
-								<h3>PRYTHM AQUARIUM</h3>
+								<h3>PRYTHM水族館</h3>
 								<hr>
 								<p>東京都墨田区 泪橋3-2-1 墨田バイオAI研究所<br>
 									Sumida Bio AI Lab NamidaBashi 3-2-1, Sumida-ku, Tokyo<br>
 									<br>
 									Tel : 0120-1234-5678<br>
 								</p>
-								<div class="view_more_btn">GOOGLE MAP ></div>		
+								<div class="view_more_btn"><a href="https://www.google.com/maps/place/東京都墨田区+泪橋3-2-1" target="_blank" style="color: inherit; text-decoration: none;">GOOGLE MAP ></a></div>
 							</div>
 						</div>
 					</div>
 				</div>
+
 				<!-- フッター -->
 				<div id="footer">
 					<div class="ft_col">
@@ -257,7 +258,7 @@
 								</li>
 								<li class="ft_sns">
 									<div>
-										<img src="./img/ft_twitter.png" alt="">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" version="1.1" id="IconChangeColor" height="24" width="24"> <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" id="mainIconPathAttribute" fill="#ffffff"></path> </svg>
 									</div>
 									<div>
 										<img src="./img/ft_instagram.png" alt="">
@@ -287,7 +288,7 @@
 							</li>
 							<li class="ft_sns">
 								<div>
-									<img src="./img/ft_twitter.png" alt="">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" version="1.1" id="IconChangeColor" height="24" width="24"> <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" id="mainIconPathAttribute" fill="#ffffff"></path> </svg>
 								</div>
 								<div>
 									<img src="./img/ft_instagram.png" alt="">
@@ -322,6 +323,22 @@
               $slideElement.addClass('active-zoom');
             }		
 		});
+
+		// フェードインアニメーション
+		function fadeInOnScroll() {
+			$('.fade-in').each(function() {
+				var elementTop = $(this).offset().top;
+				var windowBottom = $(window).scrollTop() + $(window).height();
+				console.log('Element top:', elementTop, 'Window bottom:', windowBottom); // デバッグ用
+				if (elementTop < windowBottom) {
+					$(this).addClass('visible');
+					console.log('Visible class added'); // デバッグ用
+				}
+			});
+		}
+
+		$(window).on('scroll', fadeInOnScroll);
+		fadeInOnScroll(); // 初期ロード時にもチェック
 	});
 	</script>
 	<!--bxslider END-->
